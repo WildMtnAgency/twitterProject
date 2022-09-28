@@ -1,0 +1,54 @@
+*{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 10px;
+}
+h5 { font-size: 14px; font-weight: 600;}
+.outer-container {
+  width: 100%;
+  border: 1px solid black;
+}
+.profile-top-ctr {
+  width: 600px;
+  border: 1px solid red;
+  margin:auto;
+}
+#profile-top-bg {
+  position: relative;
+}
+#profile-top-bg > img{
+  display: block;
+  width: 600px;
+  z-index: 2;
+}
+.profile-pic-ctr {
+  display: block;
+  z-index: 4;
+}
+#profile-pic {
+  position: absolute;
+  top: 18.5%;
+  left: 35%;
+  width: 150px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+.profile-about {
+  margin-top: 80px;
+}
+.followBtn-Ctr{
+  display: block;
+  float: right;
+}
+.btn {
+  background-color: #41c0fa;
+  color: white;
+}
+#followBtn{
+  border-radius: 15px;
+  padding: 5px 20px;
+}
