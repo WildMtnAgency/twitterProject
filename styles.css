@@ -3,52 +3,128 @@
   margin: 0;
   padding: 0;
 }
-body {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 10px;
+
+/* MEDIA QUERIES */
+/* Large devices (laptops/desktops, 1200px and below) */
+@media only screen and (max-width: 980px) {
+  body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+  }
+  h5 { 
+    font-size: 14px; 
+    font-weight: 600;
+  }
+  .outer-container {
+    width: 100%;
+    border: 1px solid black;
+  }
+  .profile-top-ctr {
+    width: 450px;
+    border: 1px solid red;
+    margin:auto;
+  }
+  #profile-top-bg {
+    position: relative;
+  }
+  #profile-top-bg > img{
+    display: block;
+    width: 450px;
+    z-index: 2;
+  }
+  .profile-pic-ctr {
+    display: block;
+    z-index: 4;
+  }
+  #profile-pic {
+    position: absolute;
+    top: 18.5%;
+    left: 35%;
+    width: 150px;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+  .profile-about {
+    margin-top: 80px;
+  }
+  .followBtn-Ctr{
+    display: block;
+    float: right;
+  }
+  .btn {
+    background-color: #41c0fa;
+    color: white;
+  }
+  #followBtn{
+    border-radius: 15px;
+    padding: 5px 20px;
+  }
 }
-h5 { font-size: 14px; font-weight: 600;}
-.outer-container {
-  width: 100%;
-  border: 1px solid black;
-}
-.profile-top-ctr {
-  width: 600px;
-  border: 1px solid red;
-  margin:auto;
-}
-#profile-top-bg {
-  position: relative;
-}
-#profile-top-bg > img{
-  display: block;
-  width: 600px;
-  z-index: 2;
-}
-.profile-pic-ctr {
-  display: block;
-  z-index: 4;
-}
-#profile-pic {
-  position: absolute;
-  top: 18.5%;
-  left: 35%;
-  width: 150px;
-  border: 3px solid white;
-  border-radius: 50%;
-}
-.profile-about {
-  margin-top: 80px;
-}
-.followBtn-Ctr{
-  display: block;
-  float: right;
-}
-.btn {
-  background-color: #41c0fa;
-  color: white;
-}
-#followBtn{
-  border-radius: 15px;
-  padding: 5px 20px;
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+  }
+  h5 { 
+    font-size: 16px; 
+    font-weight: 600;
+  }
+  .outer-container {
+    width: 100%;
+    border: 1px solid black;
+  }
+  .profile-top-ctr {
+    width: 600px;
+    border: 1px solid red;
+    margin:auto;
+  }
+  .profile-name-ctr{
+    margin-left: 10px;
+  }
+  #profile-top-bg {
+    position: relative;
+  }
+  #profile-top-bg > img{
+    display: block;
+    width: 600px;
+    z-index: 2;
+  }
+  .profile-pic-ctr {
+    display: block;
+    z-index: 4;
+  }
+  #profile-pic {
+    position: absolute;
+    top: 22.5%;
+    left: 30%;
+    width: 150px;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+  .profile-about {
+    margin-top: 50px;
+  }
+  .about-content {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .followBtn-Ctr{
+    display: block;
+    display: flex;
+    justify-content: right;
+  }
+  #followBtn{
+    background-color: #41c0fa;
+    color: white;
+    border-radius: 15px;
+    padding: 7px 20px;
+    margin-right: 10px;
+    margin-top: -30px;
+  }
+  #followBtn:hover{
+    cursor: pointer;
+    background-color: #76d3fe;
+  }
 }
