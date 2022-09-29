@@ -1,0 +1,11 @@
+.center {
+  width: 100%;
+}
+.header {
+  width: 600px;
+  margin: auto;
+}
+.background-cover-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
