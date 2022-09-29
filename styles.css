@@ -69,19 +69,48 @@
   }
   h5 { 
     font-size: 16px; 
-    font-weight: 600;
+    font-weight: 900;
+    color: black;
   }
   .outer-container {
     width: 100%;
-    border: 1px solid black;
   }
   .profile-top-ctr {
     width: 600px;
     border: 1px solid red;
     margin:auto;
+    border: 0.75px solid #f1f1f1;
+  }
+  .profile-card {
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .follower-btn-ctr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7%;
+  }
+  #backBtn ion-icon {
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    color: #41c0fa; 
   }
   .profile-name-ctr{
-    margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 3px 0 0 30px;
+  }
+  .profile-card-inner > p {
+    margin-left: 30px;
+    color: slategray;
+  }
+  #verifiedIcon {
+    font-size: 20px;
+    color: #41c0fa;
+    margin-left: 2px;
   }
   #profile-top-bg {
     position: relative;
@@ -103,13 +132,6 @@
     border: 3px solid white;
     border-radius: 50%;
   }
-  .profile-about {
-    margin-top: 50px;
-  }
-  .about-content {
-    margin-top: 20px;
-    margin-left: 10px;
-  }
   .followBtn-Ctr{
     display: block;
     display: flex;
@@ -118,13 +140,74 @@
   #followBtn{
     background-color: #41c0fa;
     color: white;
+    font-size: 16px;
+    font-weight: 600;
     border-radius: 15px;
-    padding: 7px 20px;
+    padding: 5px 20px;
     margin-right: 10px;
-    margin-top: -30px;
+    margin-top: -40px;
   }
   #followBtn:hover{
     cursor: pointer;
     background-color: #76d3fe;
+  }
+  .profile-about {
+    margin-top: 50px;
+    height: 150px;
+  }
+  .about-content {
+    font-size: 14px;
+    margin-top: 40px;
+    margin-left: 10px;
+    color: slategray;
+  }
+  .about-content > span {
+    line-height: 28px;
+  }
+  .name-handler {
+    margin-bottom: 5px;
+    line-height: 16px;
+  }
+  #handler {
+    font-size: 12px;
+  }
+  span ion-icon {
+    font-size: 15px;
+  }
+  .profile-following {
+    width: 35%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -18px;
+    margin-top: 8px;
+  }
+  #following, #followers { font-weight: 800; color: black; }
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tab {
+    width: 130px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+  .tab a:active {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    color: #636363;
+  }
+  .tab:nth-of-type(1){
+    margin-left: 25px;
+  }
+  .tab:nth-of-type(2){
+    width: 180px;
+  }
+  tab a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color:#41c0fa;
+    border-bottom: 2px solid #41c0fa;
   }
 }
