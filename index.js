@@ -9,15 +9,24 @@ var user1 = {
     tweets: [
         {
             text: 'I admit to judging books by their cover',
-            timestamp: '2/10/2021 00:01:20'
+            timestamp: '2/10/2021 00:01:20',
+            replied: 5000,
+            retweets: 7500,
+            likes: 52000000
         },
         {
             text: 'Starship to the moon',
-            timestamp: '2/09/2021 18:37:12'
+            timestamp: '2/09/2021 18:37:12',
+            replied: 2500,
+            retweets: 10000,
+            likes: 85000000
         },
         {
             text: 'Out on launch pad, engine swap underway',
-            timestamp: '2/09/2021 12:11:51'
+            timestamp: '2/09/2021 12:11:51',
+            replied: 5000,
+            retweets: 2500,
+            likes: 230000
         }
     ]
 };
@@ -84,6 +93,36 @@ profileDetailsCtr.innerHTML = `
 `;
 
 let tweetsCtrDOM = document.getElementById('tweets-ctr');
-tweetsCtrDOM.innerHTML = `
-<p>tweets-ctr</p>
-`;
+for(tweet of user1.tweets){
+    let row = document.createElement('div');
+    row.classList.add('row');
+    row.innerHTML = `
+    <div id="tweetMenu-ctr"><ion-icon id="menuIcon" name="ellipsis-horizontal-sharp"></ion-icon></div>
+    <div id="tweetAvatar-ctr">
+        <img id="tweetAvatar" src="${tweet.avatarURL}">
+    </div>
+    <div id="tweet-topper">
+        <h6>${tweet.displayName} <ion-icon id="verified" name="checkmark-circle"></ion-icon></h6>
+        <p>${tweet.userName} · </p>
+        <p>${tweet.timestamp}</p>
+    </div>
+    <div id="tweet-text">
+        <p>${tweet.text}</p>
+    </div>
+    <div class="engage-ctr">
+        <div class="engage">
+            <p><ion-icon class="icon" id="replyIcon" name="chatbubble-outline"></ion-icon> ${tweet.replied}k</p>
+        </div>
+        <div class="engage">
+            <p><ion-icon class="icon" id="retweetIcon" name="repeat-outline"></ion-icon> ${tweet.retweets/1000}k</p>
+        </div>
+        <div class="engage">
+            <p><ion-icon class="icon" id="likeIcon" name="heart-outline"></ion-icon> ${tweet.likes/1000}k</p>
+        </div>
+        <div class="engage">
+            <p><ion-icon class="icon" id="shareIcon" name="share-outline"></ion-icon></p>
+        </div>
+    </div>
+    `;
+    tweetsCtrDOM.append(row);
+}

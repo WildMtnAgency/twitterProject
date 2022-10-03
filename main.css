@@ -13,7 +13,6 @@ body {
 /* HTML DIV CONTAINERS */
 
 #center {
-  border: 1px solid black;
   width: 100%;
 }
 #header, #profile-details-ctr, #tweets-ctr {
@@ -32,6 +31,12 @@ body {
   width: 602px;
 }
 #profile-details-ctr {
+  border: 1px solid #f1f1f1;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  width: 600px;
   border: 1px solid #f1f1f1;
 }
 
@@ -70,7 +75,7 @@ h4 {
   margin-top: -20%;
   margin-left: 10px;
   width: 150px;
-  border: 5px solid white;
+  border: 3px solid white;
   border-radius: 50%;
 }
 .profile-details {
@@ -121,4 +126,36 @@ h4 {
   color: #48afef;
   padding-bottom: 15px;
   border-bottom: 2px solid #48afef;
+}
+#tweetMenuCtr {
+  display: flex;
+  justify-content: right;
+  margin-right: 5px;
+}
+#tweetAvatar-ctr {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+#tweetAvatar {
+  width: 40px;
+  border-radius: 50%;
+}
+#tweet-topper {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 3px;
+}
+#tweet-text {
+  display: flex;
+  justify-content: flex-start;
+}
+#engage-ctr {
+  display: flex;
+  justify-content: space-evenly;
+}
+.engage p {
+  color: #a2a2a2;
+}
+.icon {
+  font-size: 14px;
 }
