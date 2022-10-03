@@ -45,3 +45,45 @@ var user2 = {
         }
     ]
 };
+
+let headerDOM = document.getElementById('header');
+headerDOM.innerHTML = `
+<div id="profile-name">
+    <div id="backCtr"><ion-icon id="backBtn" name="arrow-back"></ion-icon></div>
+    <div class="name">
+        <h4>${user1.displayName} <ion-icon id="verified" name="checkmark-circle"></ion-icon></h4>
+        <p>${user1.tweets.length} Tweets</p>
+    </div>    
+</div>
+`;
+
+let bgCoverCtr = document.getElementById('background-cover-img');
+bgCoverCtr.innerHTML = `<img src="${user1.coverPhotoURL}">`;
+
+let profileDetailsCtr = document.getElementById('profile-details-ctr');
+profileDetailsCtr.innerHTML = `
+<div id="followBtn-ctr"><button id="followBtn">Following</button></div>
+<div id="avatar-ctr">
+    <img id="avatar" src="${user1.avatarURL}">
+</div>
+<div class="profile-details">
+    <h4>${user1.displayName}</h4>
+    <p>${user1.userName}</p>
+    <div class="calendar"><p><ion-icon id="calendar" name="calendar-outline"></ion-icon> Joined ${user1.joinedDate}</p></div>
+    <div id="follower">
+        <p><span id="followBold">${user1.followingCount}</span> Following</p>
+        <p><span id="followBold">${user1.followerCount}</span> Followers</p>
+    </div> 
+</div>
+<div class="tabs">
+    <div class="tab"><a href="#">Tweets</a></div>
+    <div class="tab"><a href="#">Tweets &amp; replies</a></div>
+    <div class="tab"><a href="#">Media</a></div>
+    <div class="tab"><a href="#">Likes</a></div>
+</div>
+`;
+
+let tweetsCtrDOM = document.getElementById('tweets-ctr');
+tweetsCtrDOM.innerHTML = `
+<p>tweets-ctr</p>
+`;

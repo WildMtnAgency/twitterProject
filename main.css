@@ -1,11 +1,124 @@
-.center {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap');
+* {
+  margin:0;
+  padding:0;
+}
+body {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #595959;
+}
+
+/* HTML DIV CONTAINERS */
+
+#center {
+  border: 1px solid black;
   width: 100%;
 }
-.header {
-  width: 600px;
+#header, #profile-details-ctr, #tweets-ctr {
   margin: auto;
+  width: 600px;
 }
-.background-cover-img {
-  background-size: cover;
-  background-repeat: no-repeat;
+#header {
+  border-left: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
+}
+#background-cover-img {
+  display: flex;
+  justify-content: center;
+}
+#background-cover-img > img {
+  width: 602px;
+}
+#profile-details-ctr {
+  border: 1px solid #f1f1f1;
+}
+
+/* DYNAMIC HTML FROM JS */
+
+#profile-name {
+  width: 600px;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+}
+#backBtn {
+  margin-top: 15px;
+  margin-left: 25px;
+  font-size: 18px;
+  color:#24a0ed;
+}
+#backBtn:hover, 
+#backBtn:visited { 
+  cursor: pointer; 
+  color: #48afef; 
+}
+.name {
+  margin: 5px 0 0 30px;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 900;
+  color: black;
+}
+#verified {
+  font-size: 21px;
+  color: #48afef;
+}
+#avatar {
+  margin-top: -20%;
+  margin-left: 10px;
+  width: 150px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+.profile-details {
+  height: 100px;
+  margin-left: 10px;
+}
+.calendar {
+  margin: 5px 0 10px;
+}
+#calendar {
+  font-size: 16.5px;
+}
+#followBtn-ctr {
+  display: flex;
+  justify-content: right;
+  margin: 10px 15px 0 0;
+}
+#followBtn {
+  background-color: #48afef;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+#follower {
+  display: flex;
+  flex-direction: row;
+}
+#follower p:nth-of-type(2){
+  padding-left: 15px;
+}
+#followBold { font-weight: 700; color: black; }
+.tabs {
+  margin: 20px 0 15px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.tab a {
+  color:#595959;
+  text-decoration: none;
+  font-weight: 600;
+}
+.tab a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #48afef;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #48afef;
 }
