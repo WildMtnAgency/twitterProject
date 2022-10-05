@@ -33,7 +33,7 @@ body {
 #profile-details-ctr {
   border: 1px solid #f1f1f1;
 }
-.row {
+#row {
   display: flex;
   justify-content: center;
   width: 600px;
@@ -145,11 +145,11 @@ h4 {
   justify-content: flex-start;
   margin-left: 3px;
 }
-#tweet-text {
+.tweet-text {
   display: flex;
   justify-content: flex-start;
 }
-#engage-ctr {
+.engage-ctr {
   display: flex;
   justify-content: space-evenly;
 }
