@@ -92,21 +92,6 @@ profileDetailsCtr.innerHTML = `
 </div>
 `;
 
-//rows are created based on each tweet
-let tweetsCtrDOM = document.getElementById('tweets-ctr');
-let row;
-
-for(tweet of user1.tweets){
-    row = document.createElement('div');
-    row.id = 'row';
-    tweetsCtrDOM.appendChild(row);
-}
-
-for(let i=0; i < row.length; i++){
-    console.log(row[i])
-}
-
-
 //rows
 // tweetMenu-ctr - ... -- way left
 // tweetAvatr-ctr - avatar pic - circle
@@ -114,45 +99,47 @@ for(let i=0; i < row.length; i++){
 // tweet-text - tweet-text
 // engage-ctr - icons & #'s
 
-// let tweetsCtrDOM = document.getElementById('tweets-ctr');
-//     let row = document.createElement('div');
-//     row.classList.add('row');
-//     row.innerHTML = `
-//     <div id="tweetMenu-ctr"><ion-icon id="menuIcon" name="ellipsis-horizontal-sharp"></ion-icon></div>
-//     <div id="tweetAvatar-ctr">
-//         <img id="tweetAvatar" src="${user1.avatarURL}">
-//     </div>
-//     <div id="tweet-topper">
-//         <h6>${user1.displayName} <ion-icon id="verified" name="checkmark-circle"></ion-icon></h6>
-//         <p>${user1.userName} · </p>
-//         <p>${user1.timestamp}</p>
-//     </div>
-//     `;
-//     tweetsCtrDOM.append(row);
-    
-//     for(tweet of user1.tweets){
-//     let tweetTextDiv = document.createElement('div');
-//     tweetTextDiv.classList.add('tweet-text');
-//     tweetTextDiv.innerHTML = `<p>${tweet.text}</p>`;
-//     row.appendChild(tweetTextDiv);
-    
-//     let engageCtr = document.createElement('div');
-//     engageCtr.classList.add('engage-ctr');
-//     engageCtr.innerHTML = `
-//     <div class="engage">
-//         <p><ion-icon class="icon" id="replyIcon" name="chatbubble-outline"></ion-icon> ${tweet.replied}k</p>
-//     </div>
-//     <div class="engage">
-//         <p><ion-icon class="icon" id="retweetIcon" name="repeat-outline"></ion-icon> ${tweet.retweets/1000}k</p>
-//     </div>
-//     <div class="engage">
-//         <p><ion-icon class="icon" id="likeIcon" name="heart-outline"></ion-icon> ${tweet.likes/1000}k</p>
-//     </div>
-//     <div class="engage">
-//         <p><ion-icon class="icon" id="shareIcon" name="share-outline"></ion-icon></p>
-//     </div>
-//     `;
-//     //append into row below
-//     row.appendChild(engageCtr);
-// }
+//rows are created based on each tweet
+let tweetsCtrDOM = document.getElementById('tweets-ctr');
+let row;
 
+for(tweet of user1.tweets){
+    row = document.createElement('div');
+    row.id = 'row';
+    row.innerHTML = `
+    <div class="top-row">
+    <div id="tweetAvatar-ctr">
+        <img id="tweetAvatar" src="${user1.avatarURL}">
+    </div>
+    <div id="tweet-topper">
+        <h6>${user1.displayName} <ion-icon id="verifiedIcon" name="checkmark-circle"></ion-icon></h6>
+        <p>${user1.userName} · ${tweet.timestamp}</p>
+    </div>
+    <div id="tweetMenu"><ion-icon id="menuIcon" name="ellipsis-horizontal-sharp"></ion-icon></div>
+    </div>
+    `;
+    tweetsCtrDOM.appendChild(row);
+
+    let tweetText = document.createElement('div');
+    tweetText.classList.add('tweet-text');
+    tweetText.innerHTML = `<p>${tweet.text}</p>`;
+    row.appendChild(tweetText);
+
+    let engageCtr = document.createElement('div');
+    engageCtr.classList.add('engage-ctr');
+    engageCtr.innerHTML = `
+    <div class="engage">
+        <p><ion-icon class="icon" id="replyIcon" name="chatbubble-outline"></ion-icon> ${tweet.replied}k</p>
+    </div>
+    <div class="engage">
+        <p><ion-icon class="icon" id="retweetIcon" name="repeat-outline"></ion-icon> ${tweet.retweets/1000}k</p>
+    </div>
+    <div class="engage">
+        <p><ion-icon class="icon" id="likeIcon" name="heart-outline"></ion-icon> ${tweet.likes/1000}k</p>
+    </div>
+    <div class="engage">
+        <p><ion-icon class="icon" id="shareIcon" name="share-outline"></ion-icon></p>
+    </div>
+    `;
+    row.appendChild(engageCtr);
+}
