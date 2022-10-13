@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var users = {
+=======
+var user = {
+>>>>>>> bonus
     user1: {
         userName: '@elonmusk',
         displayName: 'Elon Musk',
@@ -56,8 +60,25 @@ var users = {
     }
 };
 
+<<<<<<< HEAD
 
 
+=======
+//BONUS CHALLENGE
+//the params is the queryString that is to be added below as users.queryString...
+
+// let queryStr = new URLSearchParams(window.location.search);
+// console.log(queryString.get(user))
+
+// let params = (new URL(document.location)).searchParams; //user=user1
+// let userQuery = params.get('user'); //user1
+// console.log(userQuery)
+let params2 = new URLSearchParams(document.location.search)
+let query = params2.get('user')
+console.log(query + ' is query')
+console.log(user[query])
+let urlParams = user[query];
+>>>>>>> bonus
 
 
 let header = document.getElementById('header');
@@ -65,28 +86,28 @@ header.innerHTML = `
 <div id="profile-name">
     <div id="backCtr"><ion-icon id="backBtn" name="arrow-back"></ion-icon></div>
     <div class="name">
-        <h4>${user1.displayName} <ion-icon id="verified" name="checkmark-circle"></ion-icon></h4>
-        <p>${user1.tweets.length} Tweets</p>
+        <h4>${urlParams.displayName} <ion-icon id="verified" name="checkmark-circle"></ion-icon></h4>
+        <p>${urlParams.tweets.length} Tweets</p>
     </div>    
 </div>
 `;
 
 let bgCoverCtr = document.getElementById('background-cover-img');
-bgCoverCtr.innerHTML = `<img src="${user1.coverPhotoURL}">`;
+bgCoverCtr.innerHTML = `<img src="${urlParams.coverPhotoURL}">`;
 
 let profileDetailsCtr = document.getElementById('profile-details-ctr');
 profileDetailsCtr.innerHTML = `
 <div id="followBtn-ctr"><button id="followBtn">Following</button></div>
 <div id="avatar-ctr">
-    <img id="avatar" src="${user1.avatarURL}">
+    <img id="avatar" src="${urlParams.avatarURL}">
 </div>
 <div class="profile-details">
-    <h4>${user1.displayName}</h4>
-    <p>${user1.userName}</p>
-    <div class="calendar"><p><ion-icon id="calendar" name="calendar-outline"></ion-icon> Joined ${user1.joinedDate}</p></div>
+    <h4>${urlParams.displayName}</h4>
+    <p>${urlParams.userName}</p>
+    <div class="calendar"><p><ion-icon id="calendar" name="calendar-outline"></ion-icon> Joined ${urlParams.joinedDate}</p></div>
     <div id="follower">
-        <p><span id="followBold">${user1.followingCount}</span> Following</p>
-        <p><span id="followBold">${user1.followerCount}</span> Followers</p>
+        <p><span id="followBold">${urlParams.followingCount}</span> Following</p>
+        <p><span id="followBold">${urlParams.followerCount}</span> Followers</p>
     </div> 
 </div>
 <div class="tabs">
@@ -100,17 +121,17 @@ profileDetailsCtr.innerHTML = `
 let tweetsCtrDOM = document.getElementById('tweets-ctr');
 let row;
 
-for(tweet of user1.tweets){
+for(tweet of urlParams.tweets){
     row = document.createElement('div');
     row.id = 'row';
     row.innerHTML = `
     <div class="top-row">
     <div id="tweetAvatar-ctr">
-        <img id="tweetAvatar" src="${user1.avatarURL}">
+        <img id="tweetAvatar" src="${urlParams.avatarURL}">
     </div>
     <div id="tweet-topper">
-        <h6>${user1.displayName} <ion-icon id="verifiedIcon" name="checkmark-circle"></ion-icon></h6>
-        <p>${user1.userName} · ${tweet.timestamp}</p>
+        <h6>${urlParams.displayName} <ion-icon id="verifiedIcon" name="checkmark-circle"></ion-icon></h6>
+        <p>${urlParams.userName} · ${tweet.timestamp}</p>
     </div>
     <div id="tweetMenu"><ion-icon id="menuIcon" name="ellipsis-horizontal-sharp"></ion-icon></div>
     </div>
