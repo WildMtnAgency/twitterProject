@@ -61,20 +61,20 @@ header.innerHTML = `
 <div id="profile-name">
     <div id="backCtr"><ion-icon id="backBtn" name="arrow-back"></ion-icon></div>
     <div class="name">
-        <h4>${user1.displayName} <ion-icon id="verified" name="checkmark-circle"></ion-icon></h4>
-        <p>${user1.tweets.length} Tweets</p>
+        <h4>${users.displayName} <ion-icon id="verified" name="checkmark-circle"></ion-icon></h4>
+        <p>${users.tweets.length} Tweets</p>
     </div>    
 </div>
 `;
 
 let bgCoverCtr = document.getElementById('background-cover-img');
-bgCoverCtr.innerHTML = `<img src="${user1.coverPhotoURL}">`;
+bgCoverCtr.innerHTML = `<img src="${users.coverPhotoURL}">`;
 
 let profileDetailsCtr = document.getElementById('profile-details-ctr');
 profileDetailsCtr.innerHTML = `
 <div id="followBtn-ctr"><button id="followBtn">Following</button></div>
 <div id="avatar-ctr">
-    <img id="avatar" src="${user1.avatarURL}">
+    <img id="avatar" src="${users.avatarURL}">
 </div>
 <div class="profile-details">
     <h4>${user1.displayName}</h4>
@@ -96,17 +96,17 @@ profileDetailsCtr.innerHTML = `
 let tweetsCtrDOM = document.getElementById('tweets-ctr');
 let row;
 
-for(tweet of user1.tweets){
+for(tweet of users[key].tweets){
     row = document.createElement('div');
     row.id = 'row';
     row.innerHTML = `
     <div class="top-row">
     <div id="tweetAvatar-ctr">
-        <img id="tweetAvatar" src="${user1.avatarURL}">
+        <img id="tweetAvatar" src="${users.avatarURL}">
     </div>
     <div id="tweet-topper">
-        <h6>${user1.displayName} <ion-icon id="verifiedIcon" name="checkmark-circle"></ion-icon></h6>
-        <p>${user1.userName} · ${tweet.timestamp}</p>
+        <h6>${users.displayName} <ion-icon id="verifiedIcon" name="checkmark-circle"></ion-icon></h6>
+        <p>${users.userName} · ${tweet.timestamp}</p>
     </div>
     <div id="tweetMenu"><ion-icon id="menuIcon" name="ellipsis-horizontal-sharp"></ion-icon></div>
     </div>
@@ -139,7 +139,8 @@ for(tweet of user1.tweets){
 
 //BONUS CHALLENGE
 
-//retrieve queryStr from url
-    //queryStr = user:user1
-//based on the query string value, render that user obj
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
 
+console.log(params)
