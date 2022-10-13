@@ -140,10 +140,3 @@ for(tweet of user1.tweets){
     `;
     row.appendChild(engageCtr);
 }
-
-//BONUS CHALLENGE
-
-//retrieve queryStr from url
-    //queryStr = user:user1
-//based on the query string value, render that user obj
-
