@@ -1,58 +1,59 @@
-var user1 = {
-    userName: '@elonmusk',
-    displayName: 'Elon Musk',
-    joinedDate: 'June 2009',
-    followingCount: 103,
-    followerCount: 47900000,
-    avatarURL: 'assets/elonmusk.jpg',
-    coverPhotoURL: 'assets/elonmusk-cover.jpeg',
-    tweets: [
-        {
-            text: 'I admit to judging books by their cover',
-            timestamp: '2/10/2021 00:01:20',
-            replied: 5000,
-            retweets: 7500,
-            likes: 52000000
-        },
-        {
-            text: 'Starship to the moon',
-            timestamp: '2/09/2021 18:37:12',
-            replied: 2500,
-            retweets: 10000,
-            likes: 85000000
-        },
-        {
-            text: 'Out on launch pad, engine swap underway',
-            timestamp: '2/09/2021 12:11:51',
-            replied: 5000,
-            retweets: 2500,
-            likes: 230000
-        }
-    ]
-};
-
-var user2 = {
-    userName: '@BillGates',
-    displayName: 'Bill Gates',
-    joinedDate: 'June 2009',
-    followingCount: 274,
-    followerCount: 53800000,
-    avatarURL: 'assets/billgates.jpg',
-    coverPhotoURL: 'assets/billgates-cover.jpeg',
-    tweets: [
-        {
-            text: 'Everybody asks, how is the next Windows coming along? But nobody asks how is Bill? :/',
-            timestamp: '2/10/2021 00:01:20'
-        },
-        {
-            text: 'Should I start tweeting memes? Let me know in a comment.',
-            timestamp: '2/09/2021 18:37:12'
-        },
-        {
-            text: 'In 2020, I read a book every hour.',
-            timestamp: '2/09/2021 12:11:51'
-        }
-    ]
+var users = {
+    user1: {
+        userName: '@elonmusk',
+        displayName: 'Elon Musk',
+        joinedDate: 'June 2009',
+        followingCount: 103,
+        followerCount: 47900000,
+        avatarURL: 'assets/elonmusk.jpg',
+        coverPhotoURL: 'assets/elonmusk-cover.jpeg',
+        tweets: [
+            {
+                text: 'I admit to judging books by their cover',
+                timestamp: '2/10/2021 00:01:20',
+                replied: 5000,
+                retweets: 7500,
+                likes: 52000000
+            },
+            {
+                text: 'Starship to the moon',
+                timestamp: '2/09/2021 18:37:12',
+                replied: 2500,
+                retweets: 10000,
+                likes: 85000000
+            },
+            {
+                text: 'Out on launch pad, engine swap underway',
+                timestamp: '2/09/2021 12:11:51',
+                replied: 5000,
+                retweets: 2500,
+                likes: 230000
+            }
+        ]
+    },
+    user2: {
+        userName: '@BillGates',
+        displayName: 'Bill Gates',
+        joinedDate: 'June 2009',
+        followingCount: 274,
+        followerCount: 53800000,
+        avatarURL: 'assets/billgates.jpg',
+        coverPhotoURL: 'assets/billgates-cover.jpeg',
+        tweets: [
+            {
+                text: 'Everybody asks, how is the next Windows coming along? But nobody asks how is Bill? :/',
+                timestamp: '2/10/2021 00:01:20'
+            },
+            {
+                text: 'Should I start tweeting memes? Let me know in a comment.',
+                timestamp: '2/09/2021 18:37:12'
+            },
+            {
+                text: 'In 2020, I read a book every hour.',
+                timestamp: '2/09/2021 12:11:51'
+            }
+        ]
+    }
 };
 
 let header = document.getElementById('header');
@@ -92,14 +93,6 @@ profileDetailsCtr.innerHTML = `
 </div>
 `;
 
-//rows
-// tweetMenu-ctr - ... -- way left
-// tweetAvatr-ctr - avatar pic - circle
-// tweet-topper - name, handle, . , timestamp 
-// tweet-text - tweet-text
-// engage-ctr - icons & #'s
-
-//rows are created based on each tweet
 let tweetsCtrDOM = document.getElementById('tweets-ctr');
 let row;
 
@@ -143,3 +136,10 @@ for(tweet of user1.tweets){
     `;
     row.appendChild(engageCtr);
 }
+
+//BONUS CHALLENGE
+
+//retrieve queryStr from url
+    //queryStr = user:user1
+//based on the query string value, render that user obj
+
