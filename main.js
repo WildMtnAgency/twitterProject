@@ -161,7 +161,3 @@ for(tweet of urlParams.tweets){
     `;
     row.appendChild(engageCtr);
 }
-
-let tweetsFeed = document.getElementById('tweets-feed');
-				let dates = urlParams.tweets;
-				console.log(dates)

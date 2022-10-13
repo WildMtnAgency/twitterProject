@@ -7,19 +7,21 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title></title>
+		<title>Timeline of Tweets</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="main.css">
 
-	</head>
-	<body>
-			<h2>Tweets from all users</h2>
-			<div id="tweets-feed"></div>
+</head>
+<body>
+	<h2>Tweets Timeline</h2>
+	<h4>Tweets from All Users</h4>
+	<div id="tweets-feed"></div>
 
 
-			<script>
-    user1 = {
+	<script>
+let users = [
+				{ user1: 'user1',
         userName: '@elonmusk',
         displayName: 'Elon Musk',
         joinedDate: 'June 2009',
@@ -50,8 +52,9 @@
                 likes: 230000
             }
         ]
-    };
-    user2 = {
+    },
+ {
+	user2: 'user2',
         userName: '@BillGates',
         displayName: 'Bill Gates',
         joinedDate: 'June 2009',
@@ -82,20 +85,31 @@
                 likes: 830000
             }
         ]
-    };
-		let tweetsFeed = document.getElementById('tweets-feed');
-		let elonTweets = user1.tweets;
-		let gatesTweets = user2.tweets;
-		let allTimestamps = [];
-		for(tweet of elonTweets){
-			allTimestamps.push(tweet.timestamp);
 		}
-		for(twet of gatesTweets){
-			allTimestamps.push(twet.timestamp);
+	]
+
+//GOAL 
+//a timeline that shows all tweets from both users sorted in order of posted date
+//APPROACH
+//combine the users1 & 2 into one object of users -- access tweets arr for both users by user object
+	//when sorting the tweets timestamp for both users, gotta print out tweet text at that time too...
+//sort tweets arr by timestamp (old to new) for both users
+//print the corresponding tweet text
+
+
+for(let user of users){
+	let tweetFeed = document.getElementById('tweets-feed');
+		for(tweet of user.tweets){
+			let p1 = document.createElement('p');
+			let p2 = document.createElement('p');
+			p1.textContent = `${tweet.timestamp}`;
+			p2.textContent = `${tweet.text}`;
+			tweetFeed.appendChild(p1)
+			tweetFeed.appendChild(p2)
 		}
-		
-		
-			</script>
+}
+
+	</script>
 
 	</body>
 </html>
