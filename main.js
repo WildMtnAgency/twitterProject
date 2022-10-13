@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-var users = {
-=======
 var user = {
->>>>>>> bonus
     user1: {
         userName: '@elonmusk',
         displayName: 'Elon Musk',
@@ -60,10 +56,6 @@ var user = {
     }
 };
 
-<<<<<<< HEAD
-
-
-=======
 //BONUS CHALLENGE
 //the params is the queryString that is to be added below as users.queryString...
 
@@ -78,7 +70,6 @@ let query = params2.get('user')
 console.log(query + ' is query')
 console.log(user[query])
 let urlParams = user[query];
->>>>>>> bonus
 
 
 let header = document.getElementById('header');
