@@ -76,8 +76,8 @@ var user = {
 // console.log(userQuery)
 let params2 = new URLSearchParams(document.location.search)
 let query = params2.get('user')
-console.log(query + ' is query')
-console.log(user[query])
+// console.log(query + ' is query')
+// console.log(user[query])
 let urlParams = user[query];
 
 
@@ -161,3 +161,7 @@ for(tweet of urlParams.tweets){
     `;
     row.appendChild(engageCtr);
 }
+
+let tweetsFeed = document.getElementById('tweets-feed');
+				let dates = urlParams.tweets;
+				console.log(dates)
