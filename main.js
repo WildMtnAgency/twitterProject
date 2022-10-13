@@ -42,15 +42,24 @@ var user = {
         tweets: [
             {
                 text: 'Everybody asks, how is the next Windows coming along? But nobody asks how is Bill? :/',
-                timestamp: '2/10/2021 00:01:20'
+                timestamp: '2/10/2021 00:01:20',
+                replied: 8000,
+                retweets: 1400,
+                likes: 630000
             },
             {
                 text: 'Should I start tweeting memes? Let me know in a comment.',
-                timestamp: '2/09/2021 18:37:12'
+                timestamp: '2/09/2021 18:37:12',
+                replied: 5000,
+                retweets: 7500,
+                likes: 520000
             },
             {
                 text: 'In 2020, I read a book every hour.',
-                timestamp: '2/09/2021 12:11:51'
+                timestamp: '2/09/2021 12:11:51',
+                replied: 2000,
+                retweets: 6000,
+                likes: 830000
             }
         ]
     }
